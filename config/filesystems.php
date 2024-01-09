@@ -43,6 +43,13 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'profile-photos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/profile-photos'),
+            'url' => env('APP_URL').'/storage/profile-photos',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
 
         's3' => [
             'driver' => 's3',
