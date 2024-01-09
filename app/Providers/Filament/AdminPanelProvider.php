@@ -20,6 +20,8 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Filament\Forms\Components\FileUpload;
 use \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
+use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin;
+
 
 
 class AdminPanelProvider extends PanelProvider
@@ -74,6 +76,23 @@ class AdminPanelProvider extends PanelProvider
                     )
                     ->avatarUploadComponent(fn() => FileUpload::make('avatar_url')->disk('profile-photos')),
                 FilamentJobsMonitorPlugin::make(),
+                FilamentSpatieRolesPermissionsPlugin::make(),
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+                    ->gridColumns([
+                        'default' => 1,
+                        'sm' => 2,
+                        'lg' => 3
+                    ])
+                    ->sectionColumnSpan(1)
+                    ->checkboxListColumns([
+                        'default' => 1,
+                        'sm' => 2,
+                        'lg' => 4,
+                    ])
+                    ->resourceCheckboxListColumns([
+                        'default' => 1,
+                        'sm' => 2,
+                    ]),
             ]);
     }
 }
