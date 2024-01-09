@@ -57,6 +57,7 @@ class AdminPanelProvider extends PanelProvider
             ->resources([
                 config('filament-logger.activity_resource')
             ])
+            ->databaseNotifications()
             ->plugins([
                 \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make()
             ]);
