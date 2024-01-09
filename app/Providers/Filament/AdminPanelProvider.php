@@ -22,7 +22,6 @@ use Filament\Forms\Components\FileUpload;
 use \Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 
 
-
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
@@ -74,7 +73,7 @@ class AdminPanelProvider extends PanelProvider
                         slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
                     )
                     ->avatarUploadComponent(fn() => FileUpload::make('avatar_url')->disk('profile-photos')),
-                FilamentJobsMonitorPlugin::make()
+                FilamentJobsMonitorPlugin::make(),
             ]);
     }
 }
